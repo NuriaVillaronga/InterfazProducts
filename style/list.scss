@@ -1,112 +1,5 @@
-$minWidthOR: 43px !important;
-$maxIconOrder: 18px !important;
-$minIconOrder: 16px;
-$minPRorder: 0px !important;
-$maxPRorder: 6px;
-$maxWidthReload: 60px;
-$maxWidthOrder: 90px;
-$minWidthNew: 163px !important;
-$maxWidthSearchNew: 200px;
-$mediumWidthSearch: 175px !important;
-$minSize: 13px; 
-$mediumSize: 14px;
-$maxSize: 15px;
-$PTbuttons: 5px;
-$colorFontButtons: rgb(76, 137, 165);
-$visible: inline !important;
-$none: none !important; 
-$borderTable: 1px solid rgb(230, 230, 230);
-$primaryFontColor: rgb(155, 154, 154);
-$secundaryFontColor: rgb(134, 134, 134);
-$borderInputsSelects: 1px solid rgb(185, 185, 185);
-
-/*------------------------------*/
-/*--------Mixin_buttons---------*/
-/*------------------------------*/
-@mixin styleDivButtons($TAdiv, $PRdiv, $PTdiv) {
-    div {
-        padding-top: 12px;
-        div {
-            text-align: $TAdiv;
-            padding-top: $PTdiv;
-            padding-right: $PRdiv;
-        }
-    }
-}
-@mixin styleButtons($FS) {
-    button{
-        color: $colorFontButtons;
-        font-size: $FS;
-        height: 35px;
-        border: 1px solid rgb(228, 228, 228);
-        border-radius: 4px;
-        margin-right: 3px;
-        &:hover {
-            background-color: rgba(230, 227, 227, 0.644);
-            color: rgb(55, 100, 121);
-        }
-    }
-}
-@mixin styleReload($W) {
-    #btn_reload {
-        width: $W;
-        padding-top: $PTbuttons;
-        i {
-            font-size: 17px;
-            color: $colorFontButtons;
-        }
-    }
-}
-@mixin styleOrder($W, $PR, $F, $D) {
-    #btn_order {
-        width: $W;
-        padding-top: $PTbuttons;
-        i {
-            padding-right: $PR;
-            font-size: $F;
-            color: $colorFontButtons;
-        }
-        span {
-            display: $D;
-        }
-    }
-}
-@mixin styleNew($W, $F, $D) {
-    #btn_new {
-        padding-top: $PTbuttons;
-        width: $W;
-        i {
-            padding-right: 5px;
-            font-size: $F;
-            color: $colorFontButtons;
-            display: $D;
-        }
-    }
-}
-@mixin styleSearch($W, $F, $D) {
-    #btn_search {
-        padding-top: $PTbuttons;
-        width: $W;
-        i {
-            padding-right: 10px;
-            font-size: $F;
-            color: $colorFontButtons;
-        }
-        span {
-            display: $D;
-        }
-    }
-}
-
-@mixin styleSelects($FS) {
-    select {
-        border-bottom: $borderInputsSelects !important;
-        font-size: $FS;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
+@import "./variables/listVariables.scss";
+@import "./mixins/listMixins.scss";
 
 /*------------------------------*/
 /*-----------Searchs------------*/
@@ -115,13 +8,13 @@ form {
     padding: 20px;
     padding-bottom: $none;
 
-    #select_searchs { 
+    .select_searchs {  
         @include styleSelects($mediumSize);
         span {
             font-size: $minSize;
             color: rgba(96, 96, 102, 0.938);
         }
-        #input_search {
+        .input_search { 
             margin-top: 22px;
             .form-control {
                 font-size: $maxSize;
@@ -131,58 +24,48 @@ form {
                 padding-left: 0px;
             }
         }
-        #select_behavoir {
+        .select_behavoir { 
             margin-top: 23px;
         }
     }
 
-    #button_searchs {
-        @include styleDivButtons(right, 0px, 10px);
-        @include styleButtons($maxSize);
-        @include styleReload($maxWidthReload);
-        @include styleOrder($maxWidthOrder, $maxPRorder, $minIconOrder, inline);
-        @include styleNew($maxWidthSearchNew, $maxSize, inline);
-        @include styleSearch($maxWidthSearchNew, $mediumSize, inline); 
+    .button_searchs {
+        padding: 0px !important;
+        .visibleButtons {
+            padding-top: 18px;
+            text-align: right;
+            @include styleDivButtons(right, 0px, 10px);
+            @include styleButtons($maxSize);
+            @include styleReload($maxWidthReload);
+            @include styleOrder($maxWidthOrder, $maxPRorder, $minIconOrder, inline);
+            @include styleNew($maxWidthSearchNew, $maxSize, inline);
+            @include styleSearch($maxWidthSearchNew, $mediumSize, inline); 
+        }
+        .hiddenParagraphs {
+            display: none;
+        }
     }
 }
 
 /*------------------------------*/
 /*------------List--------------*/
 /*------------------------------*/
-#productsList {
+.productsList { 
     padding-top: 25px;
-    table {
-        font-size: $minSize;
-        border: $borderTable;
-        border-radius: 15px;
-        margin-left: 7px;
-        tr {
-            td, th{
-                color: $primaryFontColor;
-                border: $borderTable;
-                padding-top: 14px;
-                padding-bottom: 14px;
-                padding-left: 5px;
-                input {
-                    &:hover {
-                        cursor: pointer;
-                    }
+    margin: 0px !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    .hiddenTable {
+        display: none;
+    }
+    .visibleTable {
+        table {
+            @include styleTable();
+            tr {
+                @include styleColumnsTable(5px);
+                .center_items {
+                    text-align: center;
                 }
-                i {
-                    font-size: $maxSize;
-                    color: $secundaryFontColor;
-                }
-                #arrowIcon {
-                    font-size: $maxSize;
-                    color: rgb(46, 45, 45);
-                    &:hover {
-                        color: $colorFontButtons;
-                        cursor: pointer;
-                    }
-                }
-            }
-            .center_items {
-                text-align: center;
             }
         }
     }
@@ -193,7 +76,7 @@ form {
 /*------------------------------*/
 footer {
     padding-top: 30px;
-    #title_pagination {
+    .title_pagination {
         text-align: right;
         padding-top: 4px;
         span {
@@ -202,7 +85,7 @@ footer {
         }
     }
     @include styleSelects($minSize !important);
-    #icons_pagination {
+    .icons_pagination {
         padding-left: 15px;
         padding-top: 2px;
         font-size: $mediumSize !important;
@@ -214,7 +97,7 @@ footer {
 /*---------Responsive-----------*/
 /*------------------------------*/
 @media (max-width: 1837px) {
-    #button_searchs { 
+    .button_searchs { 
         @include styleButtons($mediumSize !important);
         @include styleReload($minWidthOR);
         @include styleOrder($minWidthOR, $minPRorder, $maxIconOrder, $none);
@@ -223,35 +106,95 @@ footer {
     }
 }
 @media (max-width: 1430px) {
-    #button_searchs {
+    .button_searchs {
         @include styleSearch(120px !important, $minSize !important, $none);
     }
 }
 @media (max-width: 1399px) {
-    #select_behavoir { 
+    .select_behavoir { 
         margin-top: 15px;
     }
-    #button_searchs {
-        @include styleDivButtons(center !important, 10px !important, 33px !important);
-        @include styleButtons($maxSize !important);
-        @include styleReload($maxWidthReload !important);
-        @include styleOrder($maxWidthOrder !important, $maxPRorder !important, $minIconOrder !important, $visible);
-        @include styleNew($maxWidthSearchNew !important, $maxSize !important, $visible); 
-        @include styleSearch($maxWidthSearchNew !important, $mediumSize !important, $visible);
+    .button_searchs {
+        .visibleButtons {
+            margin-left: 6px;
+            margin-right: 6px;
+            padding-top: 45px !important;
+            text-align: center !important;
+            @include styleDivButtons(center !important, 10px !important, 33px !important);
+            @include styleButtons($maxSize !important);
+            @include styleReload($maxWidthReload !important);
+            @include styleOrder($maxWidthOrder !important, $maxPRorder !important, $minIconOrder !important, $visible);
+            @include styleNew($maxWidthSearchNew !important, $maxSize !important, $visible); 
+            @include styleSearch($maxWidthSearchNew !important, $mediumSize !important, $visible);
+        }
     }
 }
 @media (max-width: 768px) {
-    #input_search { 
+    .input_search { 
         margin-top: 15px;
+    }
+    .productsList { 
+        .visibleTable {
+            display: none;
+        }
+        .hiddenTable {
+            display: block;
+            table {
+                @include styleTable();
+                tr {
+                    @include styleColumnsTable(0px !important);
+                    text-align: center;
+                    th {
+                        background-color: rgba(240, 239, 239, 0.562);
+                    }
+                }
+            }
+        }
     }
 }
 @media (max-width: 639px) {
-    #button_searchs {
-        @include styleButtons($mediumSize !important);
-        @include styleReload($minWidthOR);
-        @include styleOrder($minWidthOR, $minPRorder, $maxIconOrder, $none);
-        @include styleNew($minWidthNew, $mediumSize !important, $none);  
-        @include styleSearch($mediumWidthSearch, $minSize !important, $visible);  
+    .button_searchs {
+        .visibleButtons {
+            @include styleButtons($mediumSize !important);
+            @include styleReload($minWidthOR);
+            @include styleOrder($minWidthOR, $minPRorder, $maxIconOrder, $none);
+            @include styleNew($minWidthNew, $mediumSize !important, $none);  
+            @include styleSearch($mediumWidthSearch, $minSize !important, $visible);  
+        }
+    }
+}
+@media (max-width: 576px) {
+    footer {
+        .title_pagination {
+            text-align: left;
+            padding-bottom: 10px;
+        }
+        .icons_pagination {
+            padding-left: 0px;
+        }
+    }
+}
+@media (max-width: 521px) {
+    .button_searchs {
+        margin-top: 40px !important;
+        .visibleButtons {
+            display: none;
+        }
+        .hiddenParagraphs {
+            margin-left: 6px;
+            margin-right: 6px;
+            text-align: center;
+            display: block !important;
+            @include styleDivButtons(center !important, 10px !important, 33px !important);
+            @include styleButtons($maxSize !important);
+            @include styleReload($maxWidthReload !important);
+            @include styleOrder($maxWidthOrder !important, $maxPRorder !important, $minIconOrder !important, $visible);
+            @include styleNew($maxWidthSearchNew !important, $maxSize !important, $visible); 
+            @include styleSearch($maxWidthSearchNew !important, $mediumSize !important, $visible);
+        }
+    }
+    .productsList {
+        padding-top: 4px !important;
     }
 }
 

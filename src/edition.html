@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style/bootstrap_style.css" rel="stylesheet">
     <link href="../style/edition.css" rel="stylesheet">
-    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
-    <script language="JavaScript" src="../js/showLabels&Inputs.js"></script>
-    <script language="JavaScript" src="../js/validationStyle.js"></script>
-    <script language="JavaScript" src="../js/hamburguerMenu.js"></script>
-    <script language="JavaScript" src="../js/changeButtonsClick.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/showLabelsInputs.js"></script>
+    <script src="../js/validationStyle.js"></script>
+    <script src="../js/hamburguerMenu.js"></script>
+    <script src="../js/changeButtonsClick.js"></script>
     <title>Edición de productos</title>
 </head>
 
 <body>
 
     <!--Navigation menu-->
-    <div id="navigation_bar">
+    <div class="navigation_bar">
         <nav class="navbar navbar-expand-lg">
-            <div class="row" id="menu_select">
+            <div class="row menu_select_SM">
                 <div class="col-1"></div>
-                <div class="col-3" id="select_title">Catálogo:</div>
-                <div class="col-7" id="select_content">
+                <div class="col-3 select_title">Catálogo:</div>
+                <div class="col-7 select_content">
                     <select class="form-select">
                         <option value="1">Ejemplo catalogo 1</option>
                         <option value="2">Ejemplo catalogo 2</option>
@@ -32,7 +31,16 @@
                 </div>
                 <div class="col-1"></div>
             </div>
-            <div id="hamburguer_icon" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menuItems">
+            <div class="row menu_select_XS">
+                <div class="col-4 select_title">Catálogo:</div>
+                <div class="col-8 select_content">
+                    <select class="form-select">
+                        <option value="1">Ejemplo catalogo 1</option>
+                        <option value="2">Ejemplo catalogo 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="navbar-toggler hamburguer_icon" data-bs-toggle="collapse" data-bs-target="#menuItems">
                 <button class="changeOnMenu" type="button">
                     <i class="bi bi-list"></i>
                 </button>
@@ -46,12 +54,12 @@
                             </button>
                     </li> 
                     <li class="nav-item">
-                            <button class="changeOnMenu" id="comments" type="button"> 
+                            <button class="changeOnMenu commentsItem" type="button"> 
                                 <i class="bi bi-chat-right-text-fill"></i>
                                 <span class="hamburguer_span_items">Añadir comentarios</span> 
                             </button>
                     </li>
-                    <span id="separator_icon">|</span>
+                    <span class="separator_icon">|</span>
                     <li class="nav-item">
                             <button class="changeOnMenu" type="button">
                                 <i class="bi bi-clipboard-minus"></i>
@@ -65,13 +73,13 @@
                             </button>
                     </li>
                     <li class="nav-item">
-                            <button class="changeOnMenu" id="language" type="button">
+                            <button class="changeOnMenu languageItem" type="button">
                                 <i class="bi bi-globe"></i>
                                 <span class="hamburguer_span_items">Idioma</span>
                             </button>
                     </li>
-                    <li class="nav-item" id="last_item_hamburguer">
-                            <button class="changeOnMenu" id="logout" type="button">
+                    <li class="nav-item last_item_hamburguer">
+                            <button class="changeOnMenu logoutItem" type="button">
                                 <i class="bi bi-box-arrow-in-right"></i>
                                 <span class="hamburguer_span_items">Salir</span>
                             </button>
@@ -80,77 +88,76 @@
             </div>
         </nav>
     </div>
-    <script src="../bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <!------------->
 
     <div class="container-fluid">
         <form class="needs-validation" novalidate on>
             <!--Edition searchs-->
-            <div class="row" id="form_bar">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3 col-xxl-3" id="form_bar_select">
+            <div class="row form_bar">
+                <div class="col-12 col-md-5 col-lg-3 form_bar_select">
                     <select class="form-select">
                         <option value="1" selected>Simplified Form</option>
                         <option value="2">Simplified Form 2</option>
                         <option value="3">Simplified Form 3</option>
                     </select>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 col-xxl-6" id="form_bar_err">
+                <div class="col-12 col-md-7 col-lg-6 form_bar_err">
                     <center>
-                        <div role="alert" id="errMessage">
+                        <div role="alert errMessage">
                             <i class="bi bi-exclamation-octagon-fill"></i>
                             ¡Este producto no es válido! (<a href="#">Resumen de errores</a>)
                         </div>
                     </center>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3" id="form_bar_buttons"> 
-                    <button class="shadow-sm btn changeOnGrey" id="btn_code" type="button"><i class="bi bi-code"></i></button>
-                    <button class="shadow-sm btn changeOnGrey" id="btn_justify" type="button"><i class="bi bi-justify-left"></i></button>
-                    <button class="shadow-sm btn changeOnBlue" id="btn_save" type="submit"><i class="bi bi-save-fill"></i></button>
-                    <button class="shadow-sm btn changeOnRed" id="btn_close" type="reset"><i class="bi bi-x-square"></i></button>
+                <div class="col-12 col-lg-3 form_bar_buttons"> 
+                    <button class="shadow-sm btn changeOnGrey btn_code" type="button"><i class="bi bi-code"></i></button>
+                    <button class="shadow-sm btn changeOnGrey btn_justify" type="button"><i class="bi bi-justify-left"></i></button>
+                    <button class="shadow-sm btn changeOnBlue btn_save" type="submit"><i class="bi bi-save-fill"></i></button>
+                    <button class="shadow-sm btn changeOnRed btn_close" type="reset"><i class="bi bi-x-square"></i></button>
                 </div>
             </div>
             <!--------------->
             <!--Basic edition-->
-            <div class="row" id="basic_edition">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3" id="media">
+            <div class="row basic_edition">
+                <div class="col-12 col-lg-3 dropZone"> 
                     <div>¡Agrege el archivo multimedia soltándolo aquí!<br>O haz click para navegar</div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9" id="contentBE">
-                    <div class="row" id="first_BE">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 inputsBE">
+                <div class="col-12 col-lg-9 contentBE">
+                    <div class="row first_BE">
+                        <div class="col-12 col-lg-6 col-xl-7 inputsBE">
                             <label class="form-label">Registro de referencia</label>
                             <input type="text" name="recordReference" class="form-control requiredInput" placeholder="Registro de referencia" required>
                             <div class="invalid-feedback" id="recordReferenceM">Registro de referencia es obligatorio</div>                           
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 inputsBE">
+                        <div class="col-12 col-lg-6 col-xl-5 inputsBE">
                             <label class="form-label">ISBN13</label>
                             <input type="text" name="isbn13" class="form-control requiredInput" placeholder="ISBN13" required>
                             <div class="invalid-feedback" id="isbn13M">Debes añadir al menos un ISBN13 o un EAN</div>
                         </div>
                     </div>
                     <div class="row BE"> 
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 inputsBE">
+                        <div class="col-12 col-lg-6 col-xl-7 inputsBE">
                             <label class="form-label">EAN</label>
                             <input type="text" name="ean" class="form-control requiredInput" placeholder="EAN" required>
                             <div class="invalid-feedback" id="eanM">Debes añadir al menos un ISBN13 o un EAN</div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 inputsBE">
+                        <div class="col-12 col-lg-6 col-xl-5 inputsBE">
                             <label class="form-label">ISBN10</label>
                             <input type="text" class="form-control" placeholder="ISBN10">
                         </div>
                     </div>
                     <div class="row BE">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 inputsBE">
+                        <div class="col-12 col-lg-6 col-xl-4 inputsBE">
                             <label class="form-label">Prefijo de título</label>
                             <input type="text" class="form-control" placeholder="Prefijo de título">
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-8 col-xxl-8 inputsBE">
+                        <div class="col-12 col-lg-6 col-xl-8 inputsBE">
                             <label class="form-label">Título sin prefijo</label>
                             <input type="text" class="form-control" placeholder="Título sin prefijo">
                         </div>
                     </div>
                     <div class="row BE">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 inputsBE">
+                        <div class="col-12 inputsBE">
                             <label class="form-label">Título</label>
                             <input type="text" class="form-control" placeholder="Título">
                         </div>
@@ -207,134 +214,134 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="general_information" role="tabpanel" aria-labelledby="general_information-tab"> 
+                    <div class="tab-pane fade show active general_information" role="tabpanel" aria-labelledby="general_information-tab"> 
                         <!------General information content------>
-                        <div class="row" id="general_information_content">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="row" id="first_GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 inputsGI">
+                        <div class="row general_information_content">
+                            <div class="col-12"> 
+                                <div class="row first_GI">
+                                    <div class="col-12 inputsGI">
                                         <label class="form-label">Subtitular</label>
                                         <input type="text" class="form-control" placeholder="Subtitular">
                                     </div>
                                 </div>
                                 <div class="row GI"> 
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Tipo de notificación</label>
                                         <input type="text" class="form-control" placeholder="Tipo de notificación">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Protección tecnica EPUB</label>
                                         <input type="text" class="form-control" placeholder="Protección tecnica EPUB">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Forma de producto</label>
                                         <input type="text" class="form-control" placeholder="Forma de producto">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Código de barras</label>
                                         <input type="text" class="form-control" placeholder="Código de barras">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI"> 
                                         <label class="form-label">Detalle del formulario del producto</label>
                                         <input type="text" class="form-control" placeholder="Detalle del formulario del producto">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Composición del producto</label>
                                         <input type="text" class="form-control" placeholder="Composición del producto">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Empaquetado del producto</label>
                                         <input type="text" class="form-control" placeholder="Empaquetado del producto">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 inputsGI">
+                                    <div class="col-12 col-lg-6 inputsGI">
                                         <label class="form-label">Tipo de contenido principal</label>
                                         <input type="text" class="form-control" placeholder="Tipo de contenido principal">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Tipo de colección</label>
                                         <input type="text" class="form-control" placeholder="Tipo de colección">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Nombre del editor</label>
                                         <input type="text" class="form-control" placeholder="Nombre del editor">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Idioma del texto</label>
                                         <input type="text" class="form-control" placeholder="Idioma del text">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Título de la colección</label>
                                         <input type="text" class="form-control" placeholder="Título de la colección">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Fecha de publicación (AAAAMMDD)</label>
                                         <input type="text" name="publishingDate" class="form-control requiredInput" placeholder="Fecha de publicación (AAAAMMDD)" required>
                                         <div class="invalid-feedback" id="publishingDateM">Fecha de publicación es obligatorio</div> 
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Número de páginas</label>
                                         <input type="text" class="form-control" placeholder="Número de páginas">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Número de pieza de la colección</label>
                                         <input type="text" class="form-control" placeholder="Número de pieza de la colección">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Estado de publicación</label>
                                         <input type="text" class="form-control" placeholder="Estado de publicación">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Número de piezas</label><!---->
                                         <input type="text" class="form-control" placeholder="Número de piezas">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Año de primera publicación</label>
                                         <input type="text" class="form-control" placeholder="Año de primera publicación">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Ciudad de publicación</label>
                                         <input type="text" class="form-control" placeholder="Ciudad de publicación">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">Número de edición</label>
                                         <input type="text" class="form-control" placeholder="Número de edición">
                                     </div>
                                 </div>
                                 <div class="row GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI" id="sellRights">
+                                    <div class="col-12 col-lg-4 inputsGI" id="sellRights">
                                         <label class="form-label">A la venta con derechos exclusivos</label>
                                         <input type="text" class="form-control" placeholder="A la venta con derechos exclusivos">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                    <div class="col-12 col-lg-4 inputsGI">
                                         <label class="form-label">País de publicación</label>
                                         <input type="text" class="form-control" placeholder="País de publicación">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">  
+                                    <div class="col-12 col-lg-4 inputsGI">  
                                         <label class="form-label">País de fabricación</label>
                                         <input type="text" class="form-control" placeholder="País de fabricación">
                                     </div>
                                 </div>
-                                <div class="row" id="last_GI">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 inputsGI">
+                                <div class="row last_GI">
+                                    <div class="col-12 col-lg-4 inputsGI"> 
                                         <label class="form-label">Año de Copyright</label>
                                         <input type="text" class="form-control" placeholder="Año de CopyRight">
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 column_hidden_before_md"></div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 column_hidden_before_md"></div>
+                                    <div class="col-12 col-lg-4 column_hidden_before_md"></div>
+                                    <div class="col-12 col-lg-4 column_hidden_before_md"></div>
                                 </div>
                             </div>
                         </div>
@@ -354,12 +361,24 @@
             </div>
             <!------------>
             <!------Bottom butons------>
-            <div class="row" id="bottom_buttons">
+            <div class="row bottom_buttons">
                 <div class="col-12">
-                    <button class="shadow-sm btn changeOnGrey" id="btn_save" type="submit"><i class="bi bi-save-fill"></i> Agregar este nuevo producto</button>
-                    <button class="shadow-sm btn changeOnGrey" id="btn_close" type="reset"><i class="bi bi-x-square"></i> Cancelar</button>
-                    <button class="shadow-sm btn changeOnGrey" id="btn_code" type="button"><i class="bi bi-code"></i></button>
-                    <button class="shadow-sm btn changeOnGrey" id="btn_justify" onclick="width()" type="button"><i class="bi bi-justify-left"></i></button>
+                    <div class="visibleButtons">
+                        <button class="shadow-sm btn changeOnGrey btn_save" type="submit"><i class="bi bi-save-fill"></i> Agregar este nuevo producto</button>
+                        <button class="shadow-sm btn changeOnGrey btn_close" type="reset"><i class="bi bi-x-square"></i> Cancelar</button>
+                        <button class="shadow-sm btn changeOnGrey btn_code" type="button"><i class="bi bi-code"></i></button>
+                        <button class="shadow-sm btn changeOnGrey btn_justify" type="button"><i class="bi bi-justify-left"></i></button>
+                    </div>
+                    <p class="hiddenParagraphs">
+                        <button class="shadow-sm btn changeOnGrey btn_save" type="submit"><i class="bi bi-save-fill"></i> Agregar este nuevo producto</button>
+                    </p>
+                    <p class="hiddenParagraphs">
+                        <button class="shadow-sm btn changeOnGrey btn_close" type="reset"><i class="bi bi-x-square"></i> Cancelar</button>
+                    </p>
+                    <p class="hiddenParagraphs">
+                        <button class="shadow-sm btn changeOnGrey btn_code" type="button"><i class="bi bi-code"></i></button>
+                        <button class="shadow-sm btn changeOnGrey btn_justify" type="button"><i class="bi bi-justify-left"></i></button>
+                    </p>
                 </div>
             </div>
             <!------------>

@@ -1,124 +1,23 @@
-$colorLiTab: rgba(230, 227, 227, 0.644);
-$borderLiTab: 1px solid rgba(230, 227, 227, 0.644); 
-$borderInputsSelects: 1px solid rgb(185, 185, 185);
-$colorMenu_Buttons: white; 
-$colorFont_TabsButtonsLabels: rgba(96, 96, 102, 0.938);
-$colorMedia_Err: black;
-$primaryColor: rgb(76, 137, 165); 
-$primaryColorHover: rgb(50, 102, 126); 
-$maxSize: 15px; 
-$mediumSize: 14px;
-$minSize: 13px; 
-$closeColor: rgb(255, 71, 71); 
-$closeColorHover: rgb(197, 58, 58); 
-
-/******************************/
-/***********Mixings************/
-/******************************/
-@mixin styleBarSelect($W) {
-    #form_bar_select {
-        select{
-            width: $W;
-        }
-    }
-}
-@mixin styleBarButtons($W) {
-    #form_bar_buttons {  
-        button {
-            width: $W;
-            padding-top: 2px !important;
-        }
-    }
-}
-@mixin styleMedia($MT) {
-    #media {
-        div{
-            margin-top: $MT;
-        }
-    }
-}
-@mixin styleButton($PT, $H) {
-    button {
-        padding-top: $PT;
-        height: $H;
-        margin-left: 5px;
-        border-radius: 4px;
-        border:1px solid rgba(236, 236, 236, 0.753);
-        font-size: $maxSize;
-        &:hover {
-            background-color: $colorLiTab;
-        }
-    }
-}
-@mixin styleEspecificButtons($BC, $C, $BCH, $CH) {
-    background-color: $BC;
-    color: $C;
-    &:hover {
-        background-color: $BCH;
-        color: $CH
-    }
-}
-@mixin styleInputLabels() {
-    .form-label {
-        visibility: hidden;
-        color: $colorFont_TabsButtonsLabels;
-        font-size: 13px;
-    }
-    .form-control {
-        font-size: $maxSize;
-        margin-top: -7px;
-        border: none;
-        border-bottom: $borderInputsSelects; 
-        width: 100%;
-        padding: 0px;
-        &:focus {
-            background-color: white;
-        }
-    }
-}
-@mixin styleButtonsItems() {
-    border: 1px solid transparent;
-    border-radius: 15px;
-    background-color: transparent;
-    color: $colorMenu_Buttons;
-    width: 40px;
-    height: 30px;
-}
-@mixin style_bottom_SaveClose_responsive($PT) {
-    #bottom_buttons { 
-        div {
-            #btn_close, #btn_save {
-                padding-top: $PT !important;
-            }
-        }
-    }
-}
-@mixin style_bottom_JustyCode_responsive($PT) {
-    #bottom_buttons { 
-        div {
-            #btn_justify, #btn_code {
-                padding-top: $PT !important;
-            }
-        }
-    }
-}
+@import "./variables/editionVariables.scss";
+@import "./variables/bootstrapVariables.scss";
+@import "./mixins/editionMixins.scss";
 
 /******************************/
 /************Menu**************/
 /******************************/
-#navigation_bar {
+.navigation_bar { 
     background-color: $primaryColor;
     color: $colorMenu_Buttons; 
     padding-top: 13px;
     padding-bottom: 13px;
-    #menu_select {  
+    .menu_select_SM, .menu_select_XS {  
         width: 80%;
-        #select_title {
+        .select_title { 
             text-align: right;
             padding-right: 0px;
             padding-top: 4.5px;
         }
-        #select_content { 
+        .select_content {  
             select {
                 color: $colorMenu_Buttons;
                 background-color: $primaryColor;
@@ -129,6 +28,9 @@ $closeColorHover: rgb(197, 58, 58);
                 }
             }
         }
+    }
+    .menu_select_XS {
+        display: none;
     }
     #menuItems {  
         justify-content: right;
@@ -152,15 +54,15 @@ $closeColorHover: rgb(197, 58, 58);
                         background-color: $primaryColorHover;
                     }
                 }
-                #comments {
+                .commentsItem { 
                     margin-top: -1px;
                     padding-top: 3px !important;
                 }
-                #logout {
+                .logoutItem { 
                     padding-left: 2px !important;
                 }
             }
-            #separator_icon {
+            .separator_icon {
                 padding-top: 2px;
                 padding-left: 10px;
                 padding-right: 20px;
@@ -172,12 +74,12 @@ $closeColorHover: rgb(197, 58, 58);
 /******************************/
 /********Edition searchs*******/
 /******************************/
-#form_bar { 
+.form_bar {  
     margin-left: 10px;
     margin-right: 6px; 
     padding-top: 15px;
     font-size: $minSize; 
-    #form_bar_select { 
+    .form_bar_select { 
         text-align: left;
         padding-top: 6px;
         select {
@@ -189,7 +91,7 @@ $closeColorHover: rgb(197, 58, 58);
             }
         }
     }
-    #form_bar_err {  
+    .form_bar_err {  
         visibility: hidden;
         text-align: center;
         div {
@@ -202,16 +104,16 @@ $closeColorHover: rgb(197, 58, 58);
             }
         }
     }
-    #form_bar_buttons {  
+    .form_bar_buttons {  
         text-align: right;
         button {
             width: 50px;
         }
         @include styleButton(0.60%, 30px);
-        #btn_close {
+        .btn_close {
             @include styleEspecificButtons($closeColor, $colorMenu_Buttons, $closeColorHover, $colorMenu_Buttons);
         }
-        #btn_save { 
+        .btn_save {  
             @include styleEspecificButtons($primaryColor, $colorMenu_Buttons, $primaryColorHover, $colorMenu_Buttons); 
         }
     }
@@ -220,12 +122,12 @@ $closeColorHover: rgb(197, 58, 58);
 /******************************/
 /********Basic edition*********/
 /******************************/
-#basic_edition {
+.basic_edition {
     padding-left: 27px; 
     padding-right: 15px;
     padding-top: 30px;
     padding-bottom: 15px;
-    #media { 
+    .dropZone { 
         color: $colorFont_TabsButtonsLabels;
         border: 1px solid rgb(158, 158, 158);
         text-align: center;
@@ -237,13 +139,13 @@ $closeColorHover: rgb(197, 58, 58);
         }
     }
     @include styleMedia(105px);
-    #contentBE { 
+    .contentBE {  
         padding-bottom: 8px;
         padding-left: 20px;
         .BE { 
             padding-top: 18px;
         }
-        #first_BE, .BE { 
+        .first_BE, .BE {  
             @include styleInputLabels;
         }
     }
@@ -283,19 +185,19 @@ $closeColorHover: rgb(197, 58, 58);
         }
     }
     .tab-content { 
-        #general_information {
-            #general_information_content { 
+        .general_information { 
+            .general_information_content { 
                 border: 1px solid rgb(231, 229, 229);
                 margin-right: 15px; 
                 div {
-                    #first_GI, .GI{
+                    .first_GI, .GI{ 
                         padding-top: 18px;
                     }
-                    #last_GI {
+                    .last_GI { 
                         padding-top: 18px;
                         padding-bottom: 50px;
                     }
-                    #first_GI, .GI, #last_GI {
+                    .first_GI, .GI, .last_GI {
                         @include styleInputLabels;
                     }
                     .GI {
@@ -318,19 +220,23 @@ $closeColorHover: rgb(197, 58, 58);
 /******************************/
 /****Bottom buttons styles*****/
 /******************************/
-#bottom_buttons { 
+.bottom_buttons { 
     margin-top: 30px;
     margin-left: 2px;
+    margin-right: 2px;
     padding-bottom: 30px;
     div {
+        .hiddenParagraphs {
+            display: none;
+        }
         @include styleButton(0.23%, 32px);
-        #btn_close {
+        .btn_close {
             @include styleEspecificButtons($colorMenu_Buttons, $closeColor, $colorLiTab, $closeColorHover);
         }
-        #btn_save {
+        .btn_save {
             @include styleEspecificButtons($colorMenu_Buttons, $primaryColor, $colorLiTab, $primaryColorHover);
         }
-        #btn_close, #btn_save {
+        .btn_close, .btn_save {
             i {
                 font-size: $minSize;
                 padding-right: 3px;
@@ -342,62 +248,29 @@ $closeColorHover: rgb(197, 58, 58);
 /*------------------------------*/
 /*---------Responsive-----------*/
 /*------------------------------*/
-@media (max-width: 2025px) {
-    @include style_bottom_JustyCode_responsive(0.28%);
-}
-@media (max-width: 1874px) {
-    @include style_bottom_SaveClose_responsive(0.26%);
-}
-@media (max-width: 1673px) {
-    @include style_bottom_JustyCode_responsive(0.33%);
-}
-@media (max-width: 1664px) {
-    @include style_bottom_SaveClose_responsive(0.28%);
-}
-@media (max-width: 1549px) {
-    @include style_bottom_SaveClose_responsive(0.3%);
-}
-@media (max-width: 1502px) {
-    @include style_bottom_SaveClose_responsive(0.32%);
-}
 @media (max-width: 1472px) {
     @include styleBarButtons(50px);
-}
-@media (max-width: 1411px) {
-    @include style_bottom_SaveClose_responsive(0.34%);
 }
 @media (max-width: 1400px) {
     @include styleBarSelect(70% !important);
 }
-@media (max-width: 1332px) {
-    @include style_bottom_SaveClose_responsive(0.36%);
-}
 @media (max-width: 1314px) {
     @include styleMedia(93px !important);
-}
-@media (max-width: 1261px) {
-    @include style_bottom_SaveClose_responsive(0.38%);
 }
 @media (max-width: 1199px) {
     @include styleBarSelect(100% !important);
 }
-@media (max-width: 1197px) {
-    @include style_bottom_SaveClose_responsive(0.4%);
-}
-@media (max-width: 1139px) {
-    @include style_bottom_SaveClose_responsive(0.42%);
+@media (max-width: 1141px) {
+    @include style_bottom_JustyCode_responsive(0.35%);
 }
 @media (max-width: 1077px) {
     @include styleBarButtons(45px !important);
 }
-@media (max-width: 1163px) {
-    @include style_bottom_SaveClose_responsive(0.45%);
-}
 @media (max-width: 992px) {
-    #navigation_bar {
+    .navigation_bar {
         padding-right: 20px;
         padding-left: 30px;
-        #hamburguer_icon {
+        .hamburguer_icon { 
             button {
                 @include styleButtonsItems;
                 i {
@@ -427,43 +300,43 @@ $closeColorHover: rgb(197, 58, 58);
                             padding-left: 10px;
                         }
                     }
-                    #language { 
+                    .languageItem { 
                         padding-top: 2px !important;
                     }
                 }
-                #separator_icon {
+                .separator_icon { 
                     display: none;
                 }
-                #last_item_hamburguer {
+                .last_item_hamburguer { 
                     padding-bottom: 15px;
                 }
             }
         }
     } 
-    #form_bar_buttons {
+    .form_bar_buttons {
         display: none;
     }
-    #basic_edition {
+    .basic_edition {
         padding-right: 23px !important;
-        #media {
+        .dropZone {
             div {
                 margin-top: 40px !important;
                 margin-bottom: 40px;
             }
         }
-        #contentBE {
+        .contentBE {
             padding-left: 10px !important;
             .BE {
                 padding-top: 0px !important;
             }
-            .BE, #first_BE {
+            .BE, .first_BE {
                 .inputsBE {
                     padding-top: 13px !important;
                 }
             }
         }
     }
-    .GI, #last_GI, #first_GI {  
+    .GI, .last_GI, .first_GI {  
         padding-top: 0px !important;
         .inputsGI {
             padding-top: 15px;
@@ -473,32 +346,68 @@ $closeColorHover: rgb(197, 58, 58);
         }
     }
 }
-@media (max-width: 771px) {
-    @include style_bottom_JustyCode_responsive(0.35%);
+@media (max-width: 877px) {
+    @include style_bottom_SaveClose_responsive(0.45%);
+    @include style_bottom_JustyCode_responsive(0.45%);
 }
 @media (max-width: 768px) {
     @include styleBarSelect(55% !important);
-    #form_bar_err { 
+    .form_bar_err { 
         div {
             display: none;
             margin-top: 25px;
         }
     }
 }
-@media (max-width: 729px) {
-    @include style_bottom_JustyCode_responsive(0.38%);
-}
-@media (max-width: 677px) {
-    @include style_bottom_JustyCode_responsive(0.41%);
-}
-@media (max-width: 631px) {
-    @include style_bottom_JustyCode_responsive(0.45%);
-}
 @media (max-width: 607px) {
-    @include style_bottom_JustyCode_responsive(0.49%);
+    @include style_bottom_JustyCode_responsive(0.5%);
 }
-@media (max-width: 568px) {
-    @include style_bottom_JustyCode_responsive(0.53%);
+@media (max-width: 572px) {
+    @include style_bottom_JustyCode_responsive(0.55%);
+}
+@media (max-width: 522px) {
+    .bottom_buttons { 
+        div {
+            .hiddenParagraphs {
+                text-align: center !important;
+                display: block;
+                button {
+                    margin-left: 0px !important;
+                }
+            }
+            .visibleButtons {
+                display: none;
+            }
+        }
+    }
+    #sellRights {
+        input {
+            background-size: 0px !important;
+        }
+    }
+    @include style_bottom_SaveClose_responsive(0.55%);
+    @include style_bottom_JustyCode_responsive(0.85%);
+}
+@media (max-width: 450px) {
+    .menu_select_SM {
+        display: none;
+    }
+    .menu_select_XS {
+        width: 100%;
+        .select_title { 
+            text-align: left !important;
+            padding-left: 11px;
+            font-size: 13px;
+        }
+        .select_content {  
+            width: 100%;
+        }
+        display: block !important;
+    }
+}
+@media (max-width: 360px) {
+    @include style_bottom_SaveClose_responsive(0.7%);
+    @include style_bottom_JustyCode_responsive(0.95%);
 }
 
 
