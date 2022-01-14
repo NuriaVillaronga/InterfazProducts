@@ -12,6 +12,7 @@
     <script src="../js/hamburguerMenu.js"></script>
     <script src="../js/sortTable.js"></script>
     <script src="../js/changeButtonsClick.js"></script>
+    <script src="../js/changeSelectOption.js"></script>
     <title>Lista de productos</title>
 </head>
 
@@ -200,15 +201,15 @@
                     <div class="col-12 col-sm-5 title_pagination">
                         <span>Productos por página</span>
                     </div>
-                    <div class="col-6 col-sm-2">
-                        <select class="form-select"> <!--Distintos valores del OFFSET-->
-                            <option value="1">5</option>
-                            <option value="2">10</option>
-                            <option value="3">15</option>
-                            <option value="4">20</option>
-                            <option value="5">25</option>
+                    <form class="col-6 col-sm-2 formPages" method="get" action="./list.html">
+                        <select class="form-select selectPages"> <!--Distintos valores del OFFSET-->
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option> 
+                            <option value="25">25</option>
                         </select>
-                    </div>
+                    </form>
                     <div class="col-6 col-sm-5 icons_pagination">
                         <nav>
                             <ul class="pagination">
