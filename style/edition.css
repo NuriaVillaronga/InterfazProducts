@@ -11768,27 +11768,27 @@ fieldset:disabled .btn {
   border-bottom: 3px solid #4c89a5 !important;
 }
 
-.tab .tab-content .general_information .general_information_content {
+.tab .tab-content #general_information .general_information_content {
   border: 1px solid #e7e5e5;
   margin-right: 15px;
 }
 
-.tab .tab-content .general_information .general_information_content div .first_GI, .tab .tab-content .general_information .general_information_content div .GI {
+.tab .tab-content #general_information .general_information_content div .first_GI, .tab .tab-content #general_information .general_information_content div .GI {
   padding-top: 18px;
 }
 
-.tab .tab-content .general_information .general_information_content div .last_GI {
+.tab .tab-content #general_information .general_information_content div .last_GI {
   padding-top: 18px;
   padding-bottom: 50px;
 }
 
-.tab .tab-content .general_information .general_information_content div .first_GI .form-label, .tab .tab-content .general_information .general_information_content div .GI .form-label, .tab .tab-content .general_information .general_information_content div .last_GI .form-label {
+.tab .tab-content #general_information .general_information_content div .first_GI .form-label, .tab .tab-content #general_information .general_information_content div .GI .form-label, .tab .tab-content #general_information .general_information_content div .last_GI .form-label {
   visibility: hidden;
   color: rgba(96, 96, 102, 0.938);
   font-size: 13px;
 }
 
-.tab .tab-content .general_information .general_information_content div .first_GI .form-control, .tab .tab-content .general_information .general_information_content div .GI .form-control, .tab .tab-content .general_information .general_information_content div .last_GI .form-control {
+.tab .tab-content #general_information .general_information_content div .first_GI .form-control, .tab .tab-content #general_information .general_information_content div .GI .form-control, .tab .tab-content #general_information .general_information_content div .last_GI .form-control {
   font-size: 15px;
   margin-top: -7px;
   border: none;
@@ -11797,11 +11797,11 @@ fieldset:disabled .btn {
   padding: 0px;
 }
 
-.tab .tab-content .general_information .general_information_content div .first_GI .form-control:focus, .tab .tab-content .general_information .general_information_content div .GI .form-control:focus, .tab .tab-content .general_information .general_information_content div .last_GI .form-control:focus {
+.tab .tab-content #general_information .general_information_content div .first_GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .last_GI .form-control:focus {
   background-color: white;
 }
 
-.tab .tab-content .general_information .general_information_content div .GI #sellRights input {
+.tab .tab-content #general_information .general_information_content div .GI #sellRights input {
   background-image: url("../images/sellRights.svg") !important;
   background-repeat: no-repeat;
   background-position-x: right;

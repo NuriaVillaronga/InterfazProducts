@@ -91,7 +91,7 @@
     <!------------->
 
     <div class="container-fluid">
-        <form class="needs-validation" novalidate on>
+        <form action="./list.html" class="needs-validation" novalidate on>
             <!--Edition searchs-->
             <div class="row form_bar">
                 <div class="col-12 col-md-5 col-lg-3 form_bar_select">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-12 col-md-7 col-lg-6 form_bar_err">
                     <center>
-                        <div role="alert errMessage">
+                        <div role="alert" class="errMessage">
                             <i class="bi bi-exclamation-octagon-fill"></i>
                             ¡Este producto no es válido! (<a href="#">Resumen de errores</a>)
                         </div>
@@ -126,20 +126,20 @@
                     <div class="row first_BE">
                         <div class="col-12 col-lg-6 col-xl-7 inputsBE">
                             <label class="form-label">Registro de referencia</label>
-                            <input type="text" name="recordReference" class="form-control requiredInput" placeholder="Registro de referencia" required>
-                            <div class="invalid-feedback" id="recordReferenceM">Registro de referencia es obligatorio</div>                           
+                            <input type="text" data-bs-target="recordReference" class="form-control requiredInput" placeholder="Registro de referencia" required>
+                            <div class="invalid-feedback" id="recordReference">Registro de referencia es obligatorio</div>                           
                         </div>
                         <div class="col-12 col-lg-6 col-xl-5 inputsBE">
                             <label class="form-label">ISBN13</label>
-                            <input type="text" name="isbn13" class="form-control requiredInput" placeholder="ISBN13" required>
-                            <div class="invalid-feedback" id="isbn13M">Debes añadir al menos un ISBN13 o un EAN</div>
+                            <input type="text" data-bs-target="isbn13" class="form-control requiredInput" placeholder="ISBN13" required>
+                            <div class="invalid-feedback" id="isbn13">Debes añadir al menos un ISBN13 o un EAN</div>
                         </div>
                     </div>
                     <div class="row BE"> 
                         <div class="col-12 col-lg-6 col-xl-7 inputsBE">
                             <label class="form-label">EAN</label>
-                            <input type="text" name="ean" class="form-control requiredInput" placeholder="EAN" required>
-                            <div class="invalid-feedback" id="eanM">Debes añadir al menos un ISBN13 o un EAN</div>
+                            <input type="text" data-bs-target="ean" class="form-control requiredInput" placeholder="EAN" required>
+                            <div class="invalid-feedback" id="ean">Debes añadir al menos un ISBN13 o un EAN</div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-5 inputsBE">
                             <label class="form-label">ISBN10</label>
@@ -214,7 +214,7 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade show active general_information" role="tabpanel" aria-labelledby="general_information-tab"> 
+                    <div class="tab-pane fade show active" id="general_information" role="tabpanel" aria-labelledby="general_information-tab"> 
                         <!------General information content------>
                         <div class="row general_information_content">
                             <div class="col-12"> 
