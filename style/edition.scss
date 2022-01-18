@@ -39,27 +39,31 @@
             padding-left: 100px;
             li {
                 padding-right: 7px;
-                button {
-                    @include styleButtonsItems;
-                    i {
+                div {
+                    @include styleDivItems;
+                    padding-top: 2px;
+                    a {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        color: $colorMenu_Buttons;
+                        i {
+                            &:hover { 
+                                cursor: pointer;
+                            }
+                        }
+                        span { 
+                            display:none; 
+                        }
                         &:hover {
                             cursor: pointer;
                         }
                     }
-                    .hamburguer_span_items {
-                        display:none; 
-                    }
-                    &:hover {
-                        cursor: pointer;
-                        background-color: $primaryColorHover;
-                    }
                 }
-                .commentsItem { 
-                    margin-top: -1px;
+                .commentsItem {
                     padding-top: 3px !important;
                 }
-                .logoutItem { 
-                    padding-left: 2px !important;
+                .exitItem {
+                    padding-top: 2.7px !important;
                 }
             }
             .separator_icon {
@@ -270,13 +274,11 @@
     .navigation_bar {
         padding-right: 20px;
         padding-left: 30px;
-        .hamburguer_icon { 
-            button {
-                @include styleButtonsItems;
-                i {
-                    &:hover {
-                        cursor: pointer;
-                    }
+        .hamburguerIcon { 
+            border-radius: 15px;
+            i {
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
@@ -291,17 +293,15 @@
                 li {
                     padding-top: 15px;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    button {
+                    justify-content: center !important;
+                    div {
                         width: 205px;
-                        .hamburguer_span_items {
-                            display: inline !important;
-                            padding-left: 10px;
+                        a {
+                            span { 
+                                display: inline !important;
+                                padding-left: 10px;
+                            }
                         }
-                    }
-                    .languageItem { 
-                        padding-top: 2px !important;
                     }
                 }
                 .separator_icon { 

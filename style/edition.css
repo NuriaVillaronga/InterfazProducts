@@ -11553,35 +11553,39 @@ fieldset:disabled .btn {
   padding-right: 7px;
 }
 
-.navigation_bar #menuItems ul li button {
+.navigation_bar #menuItems ul li div {
   border: 1px solid transparent;
   border-radius: 15px;
   background-color: transparent;
-  color: white;
   width: 40px;
   height: 30px;
+  padding-top: 2px;
 }
 
-.navigation_bar #menuItems ul li button i:hover {
+.navigation_bar #menuItems ul li div a {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+
+.navigation_bar #menuItems ul li div a i:hover {
   cursor: pointer;
 }
 
-.navigation_bar #menuItems ul li button .hamburguer_span_items {
+.navigation_bar #menuItems ul li div a span {
   display: none;
 }
 
-.navigation_bar #menuItems ul li button:hover {
+.navigation_bar #menuItems ul li div a:hover {
   cursor: pointer;
-  background-color: #32667e;
 }
 
 .navigation_bar #menuItems ul li .commentsItem {
-  margin-top: -1px;
   padding-top: 3px !important;
 }
 
-.navigation_bar #menuItems ul li .logoutItem {
-  padding-left: 2px !important;
+.navigation_bar #menuItems ul li .exitItem {
+  padding-top: 2.7px !important;
 }
 
 .navigation_bar #menuItems ul .separator_icon {
@@ -11907,15 +11911,10 @@ fieldset:disabled .btn {
     padding-right: 20px;
     padding-left: 30px;
   }
-  .navigation_bar .hamburguer_icon button {
-    border: 1px solid transparent;
+  .navigation_bar .hamburguerIcon {
     border-radius: 15px;
-    background-color: transparent;
-    color: white;
-    width: 40px;
-    height: 30px;
   }
-  .navigation_bar .hamburguer_icon button i:hover {
+  .navigation_bar .hamburguerIcon i:hover {
     cursor: pointer;
   }
   .navigation_bar #menuItems {
@@ -11933,22 +11932,16 @@ fieldset:disabled .btn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
   }
-  .navigation_bar #menuItems ul li button {
+  .navigation_bar #menuItems ul li div {
     width: 205px;
   }
-  .navigation_bar #menuItems ul li button .hamburguer_span_items {
+  .navigation_bar #menuItems ul li div a span {
     display: inline !important;
     padding-left: 10px;
-  }
-  .navigation_bar #menuItems ul li .languageItem {
-    padding-top: 2px !important;
   }
   .navigation_bar #menuItems ul .separator_icon {
     display: none;

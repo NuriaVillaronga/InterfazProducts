@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         button.addEventListener('mouseup',
             () => {
-                button.setAttribute("style", "background-color:rgba(230, 227, 227, 0.644);");
+                button.setAttribute("style", "background-color: rgba(230, 227, 227, 0.644);");
             });
         button.addEventListener('mousemove',
             () => {
-                button.setAttribute("style", "background-color:rgba(230, 227, 227, 0.644);");
+                button.setAttribute("style", "background-color: rgba(230, 227, 227, 0.644);");
             });
         button.addEventListener('mouseleave',
             () => {

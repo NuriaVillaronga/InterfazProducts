@@ -40,49 +40,59 @@
                     </select>
                 </div>
             </div>
-            <div class="navbar-toggler hamburguer_icon" data-bs-toggle="collapse" data-bs-target="#menuItems">
-                <button class="changeOnMenu" type="button">
-                    <i class="bi bi-list"></i>
-                </button>
+            <div class="navbar-toggler hamburguerIcon changeOnMenu" data-bs-toggle="collapse" data-bs-target="#menuItems">
+                <i class="bi bi-list"></i>
             </div>
             <div id="menuItems" class="collapse navbar-collapse">  
                 <ul class="navbar-nav ms-5">
                     <li class="nav-item">
-                            <button class="changeOnMenu" type="button">
+                        <div class="changeOnMenu">
+                            <a>
                                 <i class="bi bi-gear-fill"></i>
-                                <span class="hamburguer_span_items">Ajustes</span>
-                            </button>
+                                <span>Ajustes</span>
+                            </a>
+                        </div>
                     </li> 
                     <li class="nav-item">
-                            <button class="changeOnMenu commentsItem" type="button"> 
+                        <div class="changeOnMenu commentsItem">
+                            <a>
                                 <i class="bi bi-chat-right-text-fill"></i>
-                                <span class="hamburguer_span_items">Añadir comentarios</span> 
-                            </button>
+                                <span>Añadir comentarios</span>  
+                            </a>
+                        </div>
                     </li>
                     <span class="separator_icon">|</span>
                     <li class="nav-item">
-                            <button class="changeOnMenu" type="button">
+                        <div class="changeOnMenu">
+                            <a> 
                                 <i class="bi bi-clipboard-minus"></i>
-                                <span class="hamburguer_span_items">Copiar</span>
-                            </button>
+                                <span>Copiar</span>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                            <button class="changeOnMenu" type="button">
+                        <div class="changeOnMenu">
+                            <a>
                                 <i class="bi bi-question-circle"></i>
-                                <span class="hamburguer_span_items">Ayuda</span>
-                            </button>
+                                <span>Ayuda</span>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                            <button class="changeOnMenu languageItem" type="button">
+                        <div class="changeOnMenu">
+                            <a>
                                 <i class="bi bi-globe"></i>
-                                <span class="hamburguer_span_items">Idioma</span>
-                            </button>
+                                <span>Idioma</span>
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item last_item_hamburguer">
-                            <button class="changeOnMenu logoutItem" type="button">
+                        <div class="changeOnMenu exitItem">
+                            <a>
                                 <i class="bi bi-box-arrow-in-right"></i>
-                                <span class="hamburguer_span_items">Salir</span>
-                            </button>
+                                <span>Salir</span>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
