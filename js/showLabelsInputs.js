@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     var body = document.querySelector('body');
-    var inputs = document.getElementsByTagName("input");
+    var inputs = document.querySelectorAll('.form-control');
     var form = document.querySelector('form');
-    var labels = document.querySelectorAll("label");
+    var labels = document.querySelectorAll(".form-label");
 
     body.addEventListener('keyup',
         () => {
             for (var i = 0; i < inputs.length; i++) {
                 if (inputs[i].value === "") {
-                    document.getElementsByTagName("label")[i].style.visibility = 'hidden';
+                    labels[i].style.visibility = 'hidden';
                 }
                 else {
-                    document.getElementsByTagName("label")[i].style.visibility = 'visible';
+                    labels[i].style.visibility = 'visible';
                 }
             }
         }

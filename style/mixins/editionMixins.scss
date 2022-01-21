@@ -45,7 +45,7 @@
     .form-label {
         visibility: hidden;
         color: $colorFont_TabsButtonsLabels;
-        font-size: 13px;
+        font-size: $minSize;
     }
     .form-control {
         font-size: $maxSize;

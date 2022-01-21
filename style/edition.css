@@ -2277,7 +2277,7 @@ progress {
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #626668 !important;
+  border-color: #86b7fe;
   outline: 0;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -2572,7 +2572,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input:focus {
-  border-color: #626668 !important;
+  border-color: #86b7fe;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
@@ -2630,7 +2630,7 @@ textarea.form-control-lg {
 }
 
 .form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23626668 !important'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
 }
 
 .form-switch .form-check-input:checked {
@@ -5115,7 +5115,7 @@ fieldset:disabled .btn {
 
 .accordion-button:focus {
   z-index: 3;
-  border-color: #626668 !important;
+  border-color: #86b7fe;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
@@ -11731,6 +11731,10 @@ fieldset:disabled .btn {
   background-color: white;
 }
 
+.basic_edition .contentBE .first_BE .text-danger, .basic_edition .contentBE .BE .text-danger {
+  font-size: 14px !important;
+}
+
 /******************************/
 /*********Tab styles***********/
 /******************************/
@@ -11803,6 +11807,22 @@ fieldset:disabled .btn {
 
 .tab .tab-content #general_information .general_information_content div .first_GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .last_GI .form-control:focus {
   background-color: white;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI span, .tab .tab-content #general_information .general_information_content div .GI span, .tab .tab-content #general_information .general_information_content div .last_GI span {
+  color: rgba(96, 96, 102, 0.938);
+  font-size: 13px;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI .form-select, .tab .tab-content #general_information .general_information_content div .GI .form-select, .tab .tab-content #general_information .general_information_content div .last_GI .form-select {
+  border-bottom: 1px solid #b9b9b9 !important;
+  padding-top: 0.8px !important;
+  padding-bottom: 0px !important;
+  font-size: 15px;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI .form-select:hover, .tab .tab-content #general_information .general_information_content div .GI .form-select:hover, .tab .tab-content #general_information .general_information_content div .last_GI .form-select:hover {
+  cursor: pointer;
 }
 
 .tab .tab-content #general_information .general_information_content div .GI #sellRights input {

@@ -151,6 +151,9 @@
         }
         .first_BE, .BE {  
             @include styleInputLabels;
+            .text-danger {
+                font-size: $mediumSize !important;
+            }
         }
     }
 }
@@ -203,6 +206,19 @@
                     }
                     .first_GI, .GI, .last_GI {
                         @include styleInputLabels;
+                        span {
+                            color: $colorFont_TabsButtonsLabels;
+                            font-size: $minSize;
+                        }
+                        .form-select {
+                            border-bottom: $borderInputsSelects !important;
+                            padding-top: 0.8px !important;
+                            padding-bottom: 0px !important;
+                            font-size: $maxSize;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
                     }
                     .GI {
                         #sellRights {
