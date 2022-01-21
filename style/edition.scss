@@ -212,6 +212,7 @@
                         }
                         .form-select {
                             border-bottom: $borderInputsSelects !important;
+                            padding-left: 0px !important;
                             padding-top: 0.8px !important;
                             padding-bottom: 0px !important;
                             font-size: $maxSize;

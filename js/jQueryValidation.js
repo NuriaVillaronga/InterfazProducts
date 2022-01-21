@@ -26,7 +26,7 @@ $(function() {
         return this.optional( element ) || value === "02";
     }, "El ISBN10 solo puede tomar el valor 02" );
 
-    $("#dataForm").validate({
+    $(".dataForm").validate({
         rules: {
             recordReference: {
                 required : true
