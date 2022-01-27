@@ -213,11 +213,27 @@
                         .form-select {
                             border-bottom: $borderInputsSelects !important;
                             padding-left: 0px !important;
-                            padding-top: 0.8px !important;
-                            padding-bottom: 0px !important;
+                            padding-top: 7px !important;
+                            padding-bottom: 1px !important;
                             font-size: $maxSize;
                             &:hover {
                                 cursor: pointer;
+                            }
+                        }
+                        .select2, .select2-container, .select2-container--default, .select2-container--below {
+                            width: 100% !important;
+                            margin-top: -0.3px !important;
+                            .selection {
+                                .select2-selection {
+                                    border-radius: 0% !important;
+                                    border-top: none !important;
+                                    border-left: none !important;
+                                    border-right: none !important;
+                                    border-bottom: $borderInputsSelects !important;
+                                    .select2-search__field {
+                                        font-size: $maxSize !important;
+                                    }
+                                }
                             }
                         }
                     }

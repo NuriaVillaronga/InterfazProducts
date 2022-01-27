@@ -11720,11 +11720,12 @@ fieldset:disabled .btn {
 
 .basic_edition .contentBE .first_BE .form-control, .basic_edition .contentBE .BE .form-control {
   font-size: 15px;
-  margin-top: -7px;
+  margin-top: 0px;
   border: none;
   border-bottom: 1px solid #b9b9b9;
   width: 100%;
   padding: 0px;
+  padding-bottom: 1px !important;
 }
 
 .basic_edition .contentBE .first_BE .form-control:focus, .basic_edition .contentBE .BE .form-control:focus {
@@ -11798,11 +11799,12 @@ fieldset:disabled .btn {
 
 .tab .tab-content #general_information .general_information_content div .first_GI .form-control, .tab .tab-content #general_information .general_information_content div .GI .form-control, .tab .tab-content #general_information .general_information_content div .last_GI .form-control {
   font-size: 15px;
-  margin-top: -7px;
+  margin-top: 0px;
   border: none;
   border-bottom: 1px solid #b9b9b9;
   width: 100%;
   padding: 0px;
+  padding-bottom: 1px !important;
 }
 
 .tab .tab-content #general_information .general_information_content div .first_GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .GI .form-control:focus, .tab .tab-content #general_information .general_information_content div .last_GI .form-control:focus {
@@ -11817,13 +11819,30 @@ fieldset:disabled .btn {
 .tab .tab-content #general_information .general_information_content div .first_GI .form-select, .tab .tab-content #general_information .general_information_content div .GI .form-select, .tab .tab-content #general_information .general_information_content div .last_GI .form-select {
   border-bottom: 1px solid #b9b9b9 !important;
   padding-left: 0px !important;
-  padding-top: 0.8px !important;
-  padding-bottom: 0px !important;
+  padding-top: 7px !important;
+  padding-bottom: 1px !important;
   font-size: 15px;
 }
 
 .tab .tab-content #general_information .general_information_content div .first_GI .form-select:hover, .tab .tab-content #general_information .general_information_content div .GI .form-select:hover, .tab .tab-content #general_information .general_information_content div .last_GI .form-select:hover {
   cursor: pointer;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI .select2, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--default, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--below, .tab .tab-content #general_information .general_information_content div .GI .select2, .tab .tab-content #general_information .general_information_content div .GI .select2-container, .tab .tab-content #general_information .general_information_content div .GI .select2-container--default, .tab .tab-content #general_information .general_information_content div .GI .select2-container--below, .tab .tab-content #general_information .general_information_content div .last_GI .select2, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--default, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--below {
+  width: 100% !important;
+  margin-top: -0.3px !important;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI .select2 .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--default .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--below .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .GI .select2 .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .GI .select2-container .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .GI .select2-container--default .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .GI .select2-container--below .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .last_GI .select2 .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--default .selection .select2-selection, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--below .selection .select2-selection {
+  border-radius: 0% !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #b9b9b9 !important;
+}
+
+.tab .tab-content #general_information .general_information_content div .first_GI .select2 .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--default .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .first_GI .select2-container--below .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .GI .select2 .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .GI .select2-container .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .GI .select2-container--default .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .GI .select2-container--below .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .last_GI .select2 .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--default .selection .select2-selection .select2-search__field, .tab .tab-content #general_information .general_information_content div .last_GI .select2-container--below .selection .select2-selection .select2-search__field {
+  font-size: 15px !important;
 }
 
 .tab .tab-content #general_information .general_information_content div .GI #sellRights input {

@@ -45,15 +45,16 @@
     .form-label {
         visibility: hidden;
         color: $colorFont_TabsButtonsLabels;
-        font-size: $minSize;
+        font-size: 13px;
     }
     .form-control {
         font-size: $maxSize;
-        margin-top: -7px;
+        margin-top: 0px;
         border: none;
         border-bottom: $borderInputsSelects; 
         width: 100%;
         padding: 0px;
+        padding-bottom: 1px !important;
         &:focus {
             background-color: white;
         }
